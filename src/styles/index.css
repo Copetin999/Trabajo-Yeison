@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌌 Fondo noche con morado neón */
+body {
+  background: radial-gradient(circle at top, #3b0764, #1e1b4b 80%);
+  color: #e9d5ff;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ✨ Estrellas parpadeando */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; transform: scale(1); }
+  to   { opacity: 1; transform: scale(1.5); }
+}
+
+/* 🌙 Tarjetas mágicas */
+.card {
+  background: rgba(40, 20, 60, 0.85);
+  border: 1px solid rgba(168, 85, 247, 0.6);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(192, 132, 252, 0.9);
+}
+
+/* Botón mágico */
+.button-primary {
+  background: linear-gradient(90deg, #7e22ce, #9333ea);
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.button-primary:hover {
+  background: linear-gradient(90deg, #a855f7, #c084fc);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.8);
+}
+
+/* Botón eliminar */
+.button-danger {
+  background: #ef4444;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.button-danger:hover {
+  background: #dc2626;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+}
+
+/* Inputs mágicos */
+input, textarea {
+  background: rgba(30, 20, 50, 0.8);
+  border: 1px solid rgba(168, 85, 247, 0.6);
+  border-radius: 0.5rem;
+  color: #e9d5ff;
+  padding: 0.5rem;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #c084fc;
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.7);
+}
+
+/* 🎩 Sombrero de maga */
+.mage-hat {
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  font-size: 2rem;
+  transform: rotate(-20deg);
+}
