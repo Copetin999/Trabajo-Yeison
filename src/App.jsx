@@ -22,7 +22,7 @@ export default function App() {
     setTimeout(() => {
       const newTask = {
         id: Date.now(),
-        author: user.username, // 👈 aquí se guarda el usuario logueado
+        author: user.username,
         title,
         description,
         completed: false,
@@ -42,6 +42,14 @@ export default function App() {
 
   const deleteTask = (id) => {
     setTasks(tasks.filter((t) => t.id !== id));
+  };
+
+  const editTask = (id, newTitle, newDescription) => {
+    setTasks(
+      tasks.map((t) =>
+        t.id === id ? { ...t, title: newTitle, description: newDescription } : t
+      )
+    );
   };
 
   const filtered = tasks.filter(
@@ -78,6 +86,7 @@ export default function App() {
             tasks={filtered}
             toggleTask={toggleTask}
             deleteTask={deleteTask}
+            editTask={editTask}
           />
         )}
       </div>
